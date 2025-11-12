@@ -2,6 +2,7 @@
 
 ## Outils utilisés
 
+- time
 - timeit
 - tracemalloc
 - psutil
