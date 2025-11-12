@@ -10,4 +10,3 @@ class DataResearch(ABC):
     def problem_analyze(self):
         pass
 
-    

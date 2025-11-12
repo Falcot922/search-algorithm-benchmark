@@ -1,4 +1,5 @@
 import math
+from i_problems import Problem
 
 class Taquin(Problem):
     def __init__(self, i_state, g_state):
@@ -39,7 +40,7 @@ class Taquin(Problem):
                 g_col = self.g_state.index(val) % self.size
 
                 dist += abs(current_row - g_row) + abs(current_col - g_col)
-        return dist 
+        return dist
     
     
 
