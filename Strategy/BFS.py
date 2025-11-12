@@ -10,7 +10,7 @@ class BFS(DataResearch):
         file_state.enfiler(self.problem.i_state)
         parent = {self.problem.i_state : None}
 
-        while file_state.elements:
+        while not file_state.est_vide():
             current_state = file_state.defiler()
             self.visited_nodes += 1
 

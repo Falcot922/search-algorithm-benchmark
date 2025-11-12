@@ -10,7 +10,7 @@ class DFS(DataResearch):
         pile_state.empiler(self.problem.i_state)
         visited = set()
 
-        while pile_state.elements:
+        while not pile_state.est_vide():
             current_state = pile_state.depiler()
             self.visited_nodes += 1
 
