@@ -3,28 +3,30 @@ from i_problems import Problem
 
 class Taquin(Problem):
     def __init__(self, i_state, g_state):
-        super(i_state, g_state)
+        super.__init__(i_state, g_state)
         self.size = int(math.sqrt(len(i_state)))
 
     def get_next_steps(self, state):
         list_steps = []
         zero = state.index(0)
 
-        row = self.size // zero
-        col = self.size % zero
+        row = zero // self.size
+        col = zero % self.size
 
-        moves = ((0,1), (0,-1), (1,0), (-1,0))
+        moves = [(0,1), (0,-1), (1,0), (-1,0)]
 
-        for i in range (len(moves)):
-            r_dir = row + moves[i][0]
-            c_dir = col + moves[i][1]
+        for dr, dc in moves:
+            r = row + dr
+            c = col + dc
 
-            if 0 <= r_dir < self.size and 0 <= c_dir < self.size:
-                new_state = state
-                new_zero = zero * r_dir + c_dir
+            if 0 <= r < self.size and 0 <= c < self.size:
+                new_state = list(state) 
+                new_zero = r * self.size + c
                 new_state[zero], new_state[new_zero] = new_state[new_zero], new_state[zero]
-                list_steps.append(new_state)
+                list_steps.append(tuple(new_state))
+
         return list_steps
+
 
     def is_g_state(self, state):
         return state == self.g_state
