@@ -1,4 +1,4 @@
-from i_problems import Problem
+from Problems.i_problems import Problem
 
 class NQueens(Problem):
     def __init__(self, size=8):

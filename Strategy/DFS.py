@@ -1,5 +1,5 @@
-from i_datasearch import DataResearch
-from utils.pile import Pile
+from Strategy.i_datasearch import DataResearch
+from Strategy.utils.pile import Pile
 import time
 
 class DFS(DataResearch):
@@ -13,6 +13,10 @@ class DFS(DataResearch):
         while not pile_state.est_vide():
             current_state = pile_state.depiler()
             self.visited_nodes += 1
+            
+            if current_state in visited:
+                continue
+            visited.add(current_state)
 
             if current_state == self.problem.g_state:
                 self.total_time = time.time() - start_time

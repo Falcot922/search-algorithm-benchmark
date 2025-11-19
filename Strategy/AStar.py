@@ -1,4 +1,4 @@
-from i_datasearch import DataResearch
+from Strategy.i_datasearch import DataResearch
 import heapq
 import time
 

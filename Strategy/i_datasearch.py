@@ -9,4 +9,3 @@ class DataResearch(ABC):
     @abstractmethod
     def problem_analyze(self):
         pass
-

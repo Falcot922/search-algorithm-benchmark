@@ -1,5 +1,5 @@
-from i_datasearch import DataResearch
-from utils.file import File
+from Strategy.i_datasearch import DataResearch
+from Strategy.utils.file import File
 import time
 
 class BFS(DataResearch):

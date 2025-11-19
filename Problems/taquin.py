@@ -1,9 +1,9 @@
 import math
-from i_problems import Problem
+from Problems.i_problems import Problem
 
 class Taquin(Problem):
     def __init__(self, i_state, g_state):
-        super.__init__(i_state, g_state)
+        super().__init__(i_state, g_state)
         self.size = int(math.sqrt(len(i_state)))
 
     def get_next_steps(self, state):
