@@ -1,7 +1,7 @@
 from Problems.i_problems import Problem
 
 class NQueens(Problem):
-    def __init__(self, size=8):
+    def __init__(self, size):
         self.size = size
         super().__init__(i_state=())
 
@@ -9,7 +9,7 @@ class NQueens(Problem):
         next_states = []
         row = len(state)  
         if row >= self.size:
-            return next_states 
+            return next_states
 
         for col in range(self.size):
             if self.is_safe(state, row, col):
@@ -18,6 +18,9 @@ class NQueens(Problem):
 
     def is_g_state(self, state):
         return len(state) == self.size
+    
+    def generate(self, n):
+        return NQueens(n)
 
     def heuristic_function(self, state):
         conflicts = 0

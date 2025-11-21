@@ -1,10 +1,11 @@
 import math
+from random import shuffle
 from Problems.i_problems import Problem
 
 class Taquin(Problem):
-    def __init__(self, i_state, g_state):
-        super().__init__(i_state, g_state)
-        self.size = int(math.sqrt(len(i_state)))
+    def __init__(self, size, i_state, g_state):
+        assert(int(math.sqrt(len(i_state))) == size)
+        super().__init__(size, i_state, g_state)
 
     def get_next_steps(self, state):
         list_steps = []
@@ -27,6 +28,36 @@ class Taquin(Problem):
 
         return list_steps
 
+    @staticmethod
+    def is_solvable(state, size):
+        ind = 0
+        lst = [x for x in state if x != 0]
+
+        for i in range(len(lst)):
+            for j in range(i + 1, len(lst)):
+                if lst[i] > lst[j]:
+                    ind += 1
+
+        if size % 2 == 1:
+            return  ind % 2 == 0
+
+        row_zero = state.index(0) // size
+        row_from_bottom = size - row_zero
+
+        if row_from_bottom % 2 == 0:
+            return  ind % 2 == 1
+        else:
+            return  ind % 2 == 0
+        
+    @staticmethod
+    def generate(size):
+        n = size * size
+        g_lst = list(range(1, n)) + [0]
+        while True:
+            lst = list(range(n))
+            shuffle(lst)
+            if Taquin.is_solvable(lst, size):
+                return Taquin(size, tuple(lst), tuple(g_lst))
 
     def is_g_state(self, state):
         return state == self.g_state

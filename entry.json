@@ -1,0 +1,43 @@
+{
+    "problems": ["Taquin", "Queens", "Hanoi"],
+    "algorithms": ["A*", "IDA*", "BFS"],
+    "tests": [
+        {
+            "problem" : "Taquin",
+            "name": "Taquin-3x3",
+            "count": 10,
+            "params": {
+                "size": 3
+            }
+        },
+        {
+            "name": "Taquin-4x4",
+            "count": 5,
+            "params": {
+                "size": 4
+            }
+        }
+    ],
+
+    "problem": "Taquin",
+    "results": [
+        {
+            "test_name": "Taquin-3x3",
+            "algorithm": "A*",
+            "time_ms": 12.5,
+            "memory_kb": 340,
+            "nodes_explored": 451,
+            "distance": 22
+        },
+        {
+            "test_name": "Taquin-3x3",
+            "algorithm": "IDA*",
+            "description": "Résolution avec IDA*",
+            "time_ms": 10.9,
+            "memory_kb": 85,
+            "nodes_explored": 379,
+            "distance": 22
+        }
+    ]
+}
+

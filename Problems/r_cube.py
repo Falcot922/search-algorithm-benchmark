@@ -53,6 +53,9 @@ class RCube2x2(Problem):
 
     def is_g_state(self, state):
         return state == self.g_state
+    
+    def generate(self, size = 2):
+        return RCube2x2()
 
     def heuristic_function(self, state):
         cp, co = state

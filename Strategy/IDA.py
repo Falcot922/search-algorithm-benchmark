@@ -1,5 +1,5 @@
-from i_datasearch import DataResearch
-from utils.pile import Pile
+from Strategy.i_datasearch import DataResearch
+from Strategy.utils.pile import Pile
 import time
 
 class IDA(DataResearch):

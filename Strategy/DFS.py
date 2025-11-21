@@ -22,11 +22,11 @@ class DFS(DataResearch):
                 self.total_time = time.time() - start_time
                 return self.pathing(parent, current_state)
             
-            for next in self.problem.get_next_steps(current_state):
-                if next not in visited:
-                    visited.add(next)
-                    parent[next] = current_state
-                    pile_state.empiler(next)
+            for nxt in self.problem.get_next_steps(current_state):
+                if nxt not in visited:
+                    parent[nxt] = current_state
+                    pile_state.empiler(nxt)
+
         self.total_time = time.time() - start_time
         return None 
     

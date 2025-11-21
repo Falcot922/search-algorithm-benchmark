@@ -26,6 +26,9 @@ class Hanoi(Problem):
                     new_state = self.move_disk(state, start, end)
                     next_states.append(new_state)
         return next_states
+    
+    def generate(self, n):
+        return Hanoi(n)
 
     def move_disk(self, state, start, end):
         state = list(map(list, state))
